@@ -18,7 +18,7 @@ dependencies = [
     "rich>=14.0.0",
     "sqlalchemy>=2.0.41",
     "typer>=0.16.0",
-    "vllm==0.8.4",
+    "vllm==0.9.0",
 ]
 
 [project.scripts]
