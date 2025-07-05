@@ -1,0 +1,9 @@
+services:
+  web:
+    container_name: bmserver-web
+    image: yansh97/bmserver:1.0.0
+    restart: always
+    ports:
+      - 8501:8501
+    environment:
+      - BMSERVER_POSTGRES_URL=

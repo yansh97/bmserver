@@ -1,0 +1,46 @@
+[project]
+name = "bmserver"
+version = "1.0.0"
+description = "简化大模型的权重文件管理、推理服务部署与推理性能测试"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "YanSH", email = "yansh97@foxmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.12.13",
+    "bmhub>=1.0.0",
+    "numpy>=2.2.6",
+    "nvidia-ml-py>=12.575.51",
+    "psycopg[binary,pool]>=3.2.9",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "rich>=14.0.0",
+    "sqlalchemy>=2.0.41",
+    "typer>=0.16.0",
+    "vllm==0.8.4",
+]
+
+[project.scripts]
+bmserver = "bmserver.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/yansh97/bmserver"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[dependency-groups]
+web = [
+    "pandas>=2.3.0",
+    "psycopg[binary,pool]>=3.2.9",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "sqlalchemy>=2.0.41",
+    "streamlit>=1.46.1",
+]
