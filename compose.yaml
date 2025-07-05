@@ -7,3 +7,5 @@ services:
       - 8501:8501
     environment:
       - BMSERVER_POSTGRES_URL=
+      - STREAMLIT_SERVER_ENABLE_CORS=false  # Nginx Reverse Proxy
+      - STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=false  # Nginx Reverse Proxy
